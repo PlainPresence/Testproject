@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Night Proposal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1588702547920-1c1c1c1c1c1c'); /* Sakura tree background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 3em;
+            color: #ff69b4; /* Pink color */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: #ff69b4; /* Pink color */
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0 20px;
+            border: 2px solid #ff69b4; /* Pink border */
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, select:focus {
+            border-color: #ff1493; /* Darker pink on focus */
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #ff69b4; /* Pink background */
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+        .panda-image {
+            width: 150px; /* Adjust size as needed */
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Will You Go on a Date with Me?</h1>
+
+<!-- Add cute panda images -->
+<img src="https://www.google.com/imgres?q=cute%20panda%20with%20flowers%20drawing%20transparent&imgurl=https%3A%2F%2Fw7.pngwing.com%2Fpngs%2F105%2F50%2Fpng-transparent-giant-panda-drawing-cuteness-how-to-draw-cute-red-panda-leaf-cartoon-flower.png&imgrefurl=https%3A%2F%2Fwww.pngwing.com%2Fen%2Ffree-png-dndhv&docid=Lc-g-4NOf-VwnM&tbnid=7hqgOGa8A7YqKM&vet=12ahUKEwiSmdOj-oGLAxVdyzgGHRarAqEQM3oECCoQAA..i&w=920&h=381&hcb=2&ved=2ahUKEwiSmdOj-oGLAxVdyzgGHRarAqEQM3oECCoQAA" alt="Cute Panda" class="panda-image">
+<img src="https://st.depositphotos.com/1000792/5011/v/380/depositphotos_50117079-stock-illustration-panda-holding-bouquet-of-tulips.jpg" alt="Cute Flower" class="panda-image">
+
+<form id="dateForm">
+    <label for="restaurant">Favorite Restaurant:</label>
+    <input type="text" id="restaurant" name="restaurant" placeholder="Enter your favorite restaurant" required>
+
+    <label for="movie">Favorite Movie:</label>
+    <input type="text" id="movie" name="movie" placeholder="Enter your favorite movie" required>
+
+    <label for="cuisine">Preferred Cuisine:</label>
+    <select id="cuisine" name="cuisine">
+        <option value="Italian">Italian</option>
+        <option value="Mexican">Mexican</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Indian">Indian</option>
+        <option value="American">American</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="comments">Any Additional Comments:</label>
+    <input type="text" id="comments
