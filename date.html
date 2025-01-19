@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Night Proposal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1641895958846-19dab3471449?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3RhcnJ5JTIwbmlnaHQlMjBza3l8ZW58MHx8MHx8fDA%3D');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #ff69b4; /* Pink color */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: #ff69b4; /* Pink color */
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0 20px;
+            border: 2px solid #ff69b4; /* Pink border */
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, select:focus {
+            border-color: #ff1493; /* Darker pink on focus */
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #ff69b4; /* Pink background */
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+        .panda-image {
+            width: 150px; /* Adjust size as needed */
+            margin: 10px;
+        }
+        .flower-image {
+            width: 100px; /* Adjust size as needed */
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Let's Plan Our Date Night!</h1>
+
+
+<form id="dateForm">
+    <label for="restaurant">Favorite Restaurant:</label>
+    <input type="text" id="restaurant" name="restaurant" placeholder="Enter your favorite restaurant" required>
+
+    <label for="movie">Favorite Movie:</label>
+    <input type="text" id="movie" name="movie" placeholder="Enter your favorite movie" required>
+
+    <label for="cuisine">Preferred Cuisine:</label>
+    <select id="cuisine" name="cuisine">
+        <option value="Italian">Italian</option>
+        <option value="Mexican">Mexican</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Indian">Indian</option>
+        <option value="American">American</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="comments">Any Additional Comments:</label>
+    <input type="text" id="comments" name="comments" placeholder="Anything else you'd like to add?">
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    document.getElementById('dateForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you! Your preferences have been submitted.');
+        // Here you can add code to handle the form submission, e.g
