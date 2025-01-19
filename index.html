@@ -97,13 +97,15 @@
 <img src="https://i.pinimg.com/736x/fe/d3/f1/fed3f144129ed921759a63c829878ce2.jpg" alt="Cute Flower" class="panda-image">
 
 <form id="dateForm" action="https://formspree.io/f/xbllvbzp" method="POST">
-    <input type="hidden" name="_next" value="https://https://plainpresence.github.io/Testproject/index2.html">
-    <label for="restaurant">Favorite Restaurant:</label>
-    <input type="text" id="restaurant" name="restaurant" placeholder="Enter your favorite restaurant" required>
-
-    <label for="movie">Favorite Movie:</label>
-    <input type="text" id="movie" name="movie" placeholder="Enter your favorite movie" required>
-
+    <label for="activities">Preferred Activities:</label>
+    <select id="activities" name="activities" required>
+        <option value="dinner">Dinner</option>
+        <option value="movie">Movie</option>
+        <option value="outdoor">Outdoor Adventure</option>
+        <option value="museum">Museum Visit</option>
+        <option value="concert">Concert</option>
+        <option value="picnic">Picnic</option>
+        
     <label for="cuisine">Preferred Cuisine:</label>
     <select id="cuisine" name="cuisine">
         <option value="Italian">Italian</option>
@@ -119,7 +121,10 @@
     
     <label for="comments">Any Additional Comments:</label>
     <input type="text" id="comments" name="comments" placeholder="Enter any additional comments">
-
+        
+    <label for="location">Preferred Location (optional):</label>
+    <input type="text" id="location" name="location" placeholder="Enter your preferred location (optional)">
+        
     <input type="submit" value="Submit">
 </form>
 
