@@ -13,7 +13,7 @@
             background-repeat: no-repeat;
             color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 10px; /* Reduced padding */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -23,34 +23,35 @@
         }
         h1 {
             font-family: 'Sacramento', cursive;
-            font-size: 2.5em; /* Adjusted for mobile */
+            font-size: 2em; /* Smaller font size */
             color: #ff69b4; /* Pink color */
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px; /* Reduced margin */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
         form {
             max-width: 100%; /* Full width on mobile */
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
-            padding: 20px; /* Reduced padding for mobile */
+            padding: 15px; /* Reduced padding */
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             text-align: left; /* Left-align text for better readability */
             width: 90%; /* Responsive width */
         }
         label {
             display: block;
-            margin: 10px 0 5px;
+            margin: 5px 0 3px; /* Reduced margin */
             font-weight: bold;
             color: #ff69b4; /* Pink color */
         }
         input[type="text"], input[type="date"], input[type="time"], select {
             width: 100%;
-            padding: 12px;
-            margin: 5px 0 20px;
+            padding: 8px; /* Reduced padding */
+            margin: 3px 0 15px; /* Reduced margin */
             border: 2px solid #ff69b4; /* Pink border */
             border-radius: 5px;
             transition: border-color 0.3s;
+            font-size: 0.9em; /* Smaller font size */
         }
         input[type="text"]:focus, input[type="date"]:focus, input[type="time"]:focus, select:focus {
             border-color: #ff1493; /* Darker pink on focus */
@@ -60,15 +61,27 @@
             background-color: #ff69b4; /* Pink background */
             color: white;
             border: none;
-            padding: 12px;
+            padding: 10px; /* Reduced padding */
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 1em; /* Smaller font size */
             transition: background-color 0.3s;
             width: 100%; /* Full width for submit button */
         }
         input[type="submit"]:hover {
             background-color: #ff1493; /* Darker pink on hover */
+        }
+        .instagram-link {
+            margin-top: 15px; /* Reduced margin */
+            font-size: 0.9em; /* Smaller font size */
+            color: #ff69b4; /* Pink color */
+        }
+        .instagram-link a {
+            color: #ff69b4; /* Pink color */
+            text-decoration: none; /* Remove underline */
+        }
+        .instagram-link a:hover {
+            text-decoration: underline; /* Underline on hover */
         }
     </style>
 </head>
