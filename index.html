@@ -10,19 +10,34 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f4f8;
             color: #333;
             line-height: 1.6;
             overflow-x: hidden; /* Prevent horizontal overflow */
             perspective: 1000px; /* Enable 3D perspective */
+            height: 100vh; /* Full height */
+            overflow: auto; /* Allow scrolling */
+            position: relative;
+        }
+        .background {
+            position: fixed; /* Fixed background */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff9fbc, #ff6f91, #ff4d6e); /* Gradient of pinks */
+            animation: gradientAnimation 10s ease infinite; /* Background animation */
+            z-index: -1; /* Behind other elements */
+        }
+        @keyframes gradientAnimation {
+            0% { background: linear-gradient(135deg, #ff9fbc, #ff6f91, #ff4d6e); }
+            50% { background: linear-gradient(135deg, #ff6f91, #ff4d6e, #ff9fbc); }
+            100% { background: linear-gradient(135deg, #ff4d6e, #ff9fbc, #ff6f91); }
         }
         header {
-            background: linear-gradient(135deg, #ff6f61, #51e2f5);
             padding: 60px;
             text-align: center;
             position: relative;
             animation: fadeIn 1s ease-in;
-            overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
         @keyframes fadeIn {
@@ -40,24 +55,11 @@
             margin-top: 10px;
             color: #fff; /* White text for better contrast */
         }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #fff; /* White text for better contrast */
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ff1493;
-        }
         section {
             padding: 40px; /* Increased padding for better spacing */
             margin: 20px auto; /* Center the section */
             max-width: 800px; /* Set a max width */
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
             animation: slideIn 0.5s ease-in;
@@ -99,7 +101,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #ffcccb;
+            background-color: rgba(255, 204, 203, 0.9); /* Light pink footer */
             position: relative;
             bottom: 0;
             width: 100%;
@@ -113,7 +115,7 @@
         }
         .contact-form button, .options-form button {
             padding: 15px;
-            background-color: #51e2f5; /* Blue button */
+            background-color: #ff69b4; /* Pink button */
             color: white;
             border: none;
             border-radius: 4px;
@@ -123,18 +125,21 @@
             margin-top: 10px;
         }
         .contact-form button:hover, .options-form button:hover {
-            background-color: #39b0d6; /* Darker blue on hover */
+            background-color: #ff1493; /* Darker pink on hover */
         }
         .dynamic-suggestions {
             margin-top: 20px;
+            transition: all 0.3s ease; /* Smooth transition for dynamic suggestions */
         }
         .suggestion-input {
             display: flex;
             margin-bottom: 10px;
+            transition: opacity 0.3s ease; /* Fade effect for suggestion input */
         }
         .suggestion-input input {
             flex: 1;
             margin-right: 10px;
+            transition: transform 0.3s; /* Smooth scaling effect */
         }
         .remove-suggestion {
             background-color: #ff6f61;
@@ -143,21 +148,47 @@
             border-radius: 4px;
             cursor: pointer;
             padding: 10px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s; /* Transition for button */
         }
         .remove-suggestion:hover {
             background-color: #de354c; /* Darker red on hover */
+            transform: scale(1.1); /* Scale effect on hover */
+        }
+        .quote {
+            font-style: italic;
+            color: #ff69b4; /* Pink for quotes */
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            display: none; /* Initially hidden */
+        }
+        .quote-button {
+            background-color: #ff69b4; /* Pink button */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s; /* Transition for button */
+            margin: 20px auto;
+            display: block; /* Center the button */
+        }
+        .quote-button:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+            transform: scale(1.05); /* Scale effect on hover */
         }
     </style>
 </head>
 <body>
+    <div class="background"></div>
     <header>
         <h1>I'm Sorry, [Wife's Name]</h1>
         <p>Let's make things right.</p>
     </header>
     <section>
         <h2>Options Form</h2>
-        <form class="options-form" action="https://formspree.io/f/xbllvbzp" method="POST">
+        <form class="options-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <label for="activity">Choose an Activity:</label>
             <select id="activity" name="activity" required>
                 <option value="">Select an activity</option>
@@ -205,11 +236,25 @@
 
             <button type="button" onclick="submitForm()">I Accept Apology</button>
         </form>
+
+        <button class="quote-button" onclick="showRandomQuote()">Show Random Quote</button>
+        <div class="quote" id="quote"></div>
     </section>
     <footer>
-        <p>&copy; 2023 I'm Sorry, [Wife's Name]. All rights reserved.</p>
+        <p>&copy; 2025 Plain Presence. All rights reserved.</p>
     </footer>
     <script>
+        const quotes = [
+            "I am yours, don't give myself back to me. - Rumi",
+            "You should be kissed and often, and by someone who knows how. - Margaret Mitchell, *Gone with the Wind*",
+            "I have waited for this opportunity for more than half a century, to repeat to you once again my vow of eternal fidelity and everlasting love. - Gabriel Garcia Marquez, *Love in the Time of Cholera*",
+            "You are my heart, my life, my one and only thought. - Arthur Rimbaud",
+            "In vain have I struggled. It will not do. My feelings will not be repressed. You must allow me to tell you how ardently I admire and love you. - Jane Austen, *Pride and Prejudice*",
+            "I love you not only for what you are, but for what I am when I am with you. - Elizabeth Barrett Browning",
+            "You are my sun, my moon, and all my stars. - E.E. Cummings",
+            "I would rather spend one moment holding you than a lifetime knowing I never could. - Unknown"
+        ];
+
         function submitForm() {
             const form = document.querySelector('.options-form');
             form.submit();
@@ -224,11 +269,25 @@
                 <button type="button" class="remove-suggestion" onclick="removeSuggestion(this)">Remove</button>
             `;
             suggestionsContainer.appendChild(newSuggestion);
+            newSuggestion.style.opacity = '0'; // Start hidden
+            setTimeout(() => {
+                newSuggestion.style.opacity = '1'; // Fade in effect
+            }, 10); // Small delay for the transition to take effect
         }
 
         function removeSuggestion(button) {
             const suggestionInput = button.parentElement;
-            suggestionInput.remove();
+            suggestionInput.style.opacity = '0'; // Fade out effect
+            setTimeout(() => {
+                suggestionInput.remove(); // Remove after fade out
+            }, 300); // Match the duration of the CSS transition
+        }
+
+        function showRandomQuote() {
+            const quoteElement = document.getElementById('quote');
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteElement.textContent = quotes[randomIndex];
+            quoteElement.style.display = 'block'; // Show the quote
         }
     </script>
 </body>
