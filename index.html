@@ -3,124 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Night Proposal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
+    <title>I'm Sorry, [Wife's Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-image: url('https://i.pinimg.com/736x/03/c2/f1/03c2f1f83sa9ac532327ba5cab9f2a7f29.jpg'); /* Sakura tree background */
-            background-size: cover;
-            background-repeat: no-repeat;
-            color: #333;
             margin: 0;
-            padding: 10px; /* Reduced padding */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+            perspective: 1000px; /* Enable 3D perspective */
+        }
+        header {
+            background: linear-gradient(135deg, #ff6f61, #51e2f5);
+            padding: 60px;
             text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-in;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
-        h1 {
-            font-family: 'Sacramento', cursive;
-            font-size: 2em; /* Smaller font size */
-            color: #ff69b4; /* Pink color */
-            margin-bottom: 10px; /* Reduced margin */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        form {
-            max-width: 100%; /* Full width on mobile */
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
-            padding: 15px; /* Reduced padding */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            text-align: left; /* Left-align text for better readability */
-            width: 90%; /* Responsive width */
+        header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transform: translateZ(50px); /* 3D effect */
+        }
+        header p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #fff; /* White text for better contrast */
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff; /* White text for better contrast */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff1493;
+        }
+        section {
+            padding: 40px; /* Increased padding for better spacing */
+            margin: 20px auto; /* Center the section */
+            max-width: 800px; /* Set a max width */
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s ease-in;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d; /* Enable 3D transformations */
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        h2 {
+            color: #ff69b4; /* Pink for headings */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
         }
         label {
             display: block;
-            margin: 5px 0 3px; /* Reduced margin */
+            margin-bottom: 10px;
             font-weight: bold;
-            color: #ff69b4; /* Pink color */
+            text-align: center;
         }
-        input[type="text"], input[type="date"], input[type="time"], select {
+        select, input[type="text"], textarea {
             width: 100%;
-            padding: 8px; /* Reduced padding */
-            margin: 3px 0 15px; /* Reduced margin */
-            border: 2px solid #ff69b4; /* Pink border */
-            border-radius: 5px;
-            transition: border-color 0.3s;
-            font-size: 0.9em; /* Smaller font size */
+            padding: 15px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s, transform 0.3s;
+            font-size: 1em;
         }
-        input[type="text"]:focus, input[type="date"]:focus, input[type="time"]:focus, select:focus {
-            border-color: #ff1493; /* Darker pink on focus */
+        select:focus, input[type="text"]:focus, textarea:focus {
+            border-color: #ff69b4; /* Pink border on focus */
             outline: none;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Soft glow effect */
+            transform: scale(1.02); /* Slightly scale on focus */
         }
-        input[type="submit"] {
-            background-color: #ff69b4; /* Pink background */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcccb;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            animation: fadeIn 1s ease-in;
+        }
+        .contact-form, .options-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+        .contact-form button, .options-form button {
+            padding: 15px;
+            background-color: #51e2f5; /* Blue button */
             color: white;
             border: none;
-            padding: 10px; /* Reduced padding */
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 1em; /* Smaller font size */
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        .contact-form button:hover, .options-form button:hover {
+            background-color: #39b0d6; /* Darker blue on hover */
+        }
+        .dynamic-suggestions {
+            margin-top: 20px;
+        }
+        .suggestion-input {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .suggestion-input input {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .remove-suggestion {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 10px;
             transition: background-color 0.3s;
-            width: 100%; /* Full width for submit button */
         }
-        input[type="submit"]:hover {
-            background-color: #ff1493; /* Darker pink on hover */
-        }
-        .instagram-link {
-            margin-top: 15px; /* Reduced margin */
-            font-size: 0.9em; /* Smaller font size */
-            color: #ff69b4; /* Pink color */
-        }
-        .instagram-link a {
-            color: #ff69b4; /* Pink color */
-            text-decoration: none; /* Remove underline */
-        }
-        .instagram-link a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-        .panda-image {
-            width: 100px; /* Adjusted size for smaller panda image */
-            margin: 10px; /* Margin around the image */
+        .remove-suggestion:hover {
+            background-color: #de354c; /* Darker red on hover */
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>I'm Sorry, [Wife's Name]</h1>
+        <p>Let's make things right.</p>
+    </header>
+    <section>
+        <h2>Options Form</h2>
+        <form class="options-form" action="https://formspree.io/f/xbllvbzp" method="POST">
+            <label for="activity">Choose an Activity:</label>
+            <select id="activity" name="activity" required>
+                <option value="">Select an activity</option>
+                <option value="dinner">Candlelight Dinner</option>
+                <option value="movie">Movie Night</option>
+                <option value="walk">Evening Walk</option>
+                <option value="trip">Weekend Trip</option>
+                <option value="concert">Concert</option>
+                <option value="spa">Spa Day</option>
+            </select>
 
-<h1>Will You Go on a Date with Me?</h1>
+            <label for="venue">Select a Venue:</label>
+            <select id="venue" name="venue" required>
+                <option value="">Select a venue</option>
+                <option value="restaurant">Favorite Restaurant</option>
+                <option value="park">Local Park</option>
+                <option value="home">Home</option>
+                <option value="beach">Beach</option>
+                <option value="theater">Movie Theater</option>
+                <option value="concert_hall">Concert Hall</option>
+            </select>
 
-<!-- Add cute panda images -->
-<img src="https://i.pinimg.com/736x/fe/d3/f1/fed3f144129ed921759a63c829878ce2.jpg" alt="Cute Flower" class="panda-image">
+            <label for="cuisine">Preferred Cuisine:</label>
+            <select id="cuisine" name="cuisine" required>
+                <option value="">Select a cuisine</option>
+                <option value="italian">Italian</option>
+                <option value="chinese">Chinese</option>
+                <option value="indian">Indian</option>
+                <option value="mexican">Mexican</option>
+                <option value="japanese">Japanese</option>
+                <option value="mediterranean">Mediterranean</option>
+            </select>
 
-<form id="dateForm" action="https://formspree.io/f/xbllvbzp" method="POST">
-    <label for="activities">Preferred Activities:</label>
-    <select id="activities" name="activities" required>
-        <option value="dinner">Dinner</option>
-        <option value="movie">Movie</option>
-        <option value="outdoor">Outdoor Adventure</option>
-        <option value="museum">Museum Visit</option>
-        <option value="concert">Concert</option>
-        <option value="picnic">Picnic</option>
+            <label for="suggestions">Suggestions (Typeable):</label>
+            <div class="dynamic-suggestions" id="dynamic-suggestions">
+                <div class="suggestion-input">
+                    <input type="text" name="suggestions[]" placeholder="Your suggestion here...">
+                    <button type="button" class="remove-suggestion" onclick="removeSuggestion(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addSuggestion()">Add Another Suggestion</button>
 
-    <label for="contact">Contact (Optional):</label>
-    <input type="text" id="contact" name="contact" placeholder="Enter your contact info (If you like)">
-    
-    <label for="comments">Any Additional Comments:</label>
-    <input type="text" id="comments" name="comments" placeholder="Enter any additional comments">
-        
-    <label for="location">Preferred Location (optional):</label>
-    <input type="text" id="location" name="location" placeholder="Enter your preferred location (optional)">
-        
-    <input type="submit" value="Submit">
-</form>
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Any additional notes..."></textarea>
 
-<div class="instagram-link">
-    <p>Follow me on Instagram: <a href="https://www.instagram.com/plain_presence/" target="_blank">@plain_presence</a></p>
-</div>
+            <button type="button" onclick="submitForm()">I Accept Apology</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 I'm Sorry, [Wife's Name]. All rights reserved.</p>
+    </footer>
+    <script>
+        function submitForm() {
+            const form = document.querySelector('.options-form');
+            form.submit();
+        }
 
+        function addSuggestion() {
+            const suggestionsContainer = document.getElementById('dynamic-suggestions');
+            const newSuggestion = document.createElement('div');
+            newSuggestion.className = 'suggestion-input';
+            newSuggestion.innerHTML = `
+                <input type="text" name="suggestions[]" placeholder="Your suggestion here...">
+                <button type="button" class="remove-suggestion" onclick="removeSuggestion(this)">Remove</button>
+            `;
+            suggestionsContainer.appendChild(newSuggestion);
+        }
+
+        function removeSuggestion(button) {
+            const suggestionInput = button.parentElement;
+            suggestionInput.remove();
+        }
+    </script>
 </body>
 </html>
